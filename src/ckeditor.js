@@ -5,7 +5,7 @@
 
 // The editor creator to use.
 import ClassicEditorBase from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
-
+import '@ckeditor/ckeditor5-build-classic/build/translations/ru';
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
 import UploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter';
 import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
@@ -20,25 +20,31 @@ import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
 import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
 import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
 import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
-import Indent from '@ckeditor/ckeditor5-indent/src/indent';
 import Link from '@ckeditor/ckeditor5-link/src/link';
 import List from '@ckeditor/ckeditor5-list/src/list';
-import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed';
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice';
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
+import CodeBlock from '@ckeditor/ckeditor5-code-block/src/codeblock';
+import GFMDataProcessor from '@zulcom/ckeditor5-markdown-gfm';
 
-export default class ClassicEditor extends ClassicEditorBase {}
+function Markdown( editor ) {
+	editor.data.processor = new GFMDataProcessor();
+}
+
+export default class MarkdownEditor extends ClassicEditorBase { }
 
 // Plugins to include in the build.
-ClassicEditor.builtinPlugins = [
+MarkdownEditor.builtinPlugins = [
 	Essentials,
 	UploadAdapter,
 	Autoformat,
+	Markdown,
 	Bold,
 	Italic,
+	CodeBlock,
 	BlockQuote,
 	CKFinder,
 	EasyImage,
@@ -48,10 +54,8 @@ ClassicEditor.builtinPlugins = [
 	ImageStyle,
 	ImageToolbar,
 	ImageUpload,
-	Indent,
 	Link,
 	List,
-	MediaEmbed,
 	Paragraph,
 	PasteFromOffice,
 	Table,
@@ -60,7 +64,7 @@ ClassicEditor.builtinPlugins = [
 ];
 
 // Editor configuration.
-ClassicEditor.defaultConfig = {
+MarkdownEditor.defaultConfig = {
 	toolbar: {
 		items: [
 			'heading',
@@ -71,13 +75,10 @@ ClassicEditor.defaultConfig = {
 			'bulletedList',
 			'numberedList',
 			'|',
-			'indent',
-			'outdent',
-			'|',
 			'imageUpload',
 			'blockQuote',
 			'insertTable',
-			'mediaEmbed',
+			'|',
 			'undo',
 			'redo'
 		]
@@ -94,9 +95,8 @@ ClassicEditor.defaultConfig = {
 		contentToolbar: [
 			'tableColumn',
 			'tableRow',
-			'mergeTableCells'
 		]
 	},
 	// This value must be kept in sync with the language defined in webpack.config.js.
-	language: 'en'
+	language: 'ru'
 };
