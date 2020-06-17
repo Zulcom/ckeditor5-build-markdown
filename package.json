@@ -1,6 +1,6 @@
 {
   "name": "@zulcom/ckeditor5-build-markdown",
-  "version": "19.0.0",
+  "version": "1.0.0",
   "description": "A markdown editor build of CKEditor 5 – the best browser-based rich text editor.",
   "keywords": [
     "ckeditor5-build",
@@ -30,9 +30,9 @@
     "@ckeditor/ckeditor5-basic-styles": "^19.0.0",
     "@ckeditor/ckeditor5-block-quote": "^19.0.0",
     "@ckeditor/ckeditor5-ckfinder": "^19.0.0",
-    "@ckeditor/ckeditor5-code-block": "^17.0.0",
+    "@ckeditor/ckeditor5-code-block": "^19.0.1",
     "@ckeditor/ckeditor5-core": "^19.0.0",
-    "@ckeditor/ckeditor5-dev-utils": "^13.0.0",
+    "@ckeditor/ckeditor5-dev-utils": "^20.0.0",
     "@ckeditor/ckeditor5-dev-webpack-plugin": "^9.0.0",
     "@ckeditor/ckeditor5-easy-image": "^19.0.0",
     "@ckeditor/ckeditor5-editor-classic": "^19.0.1",
