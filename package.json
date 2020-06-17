@@ -1,6 +1,6 @@
 {
   "name": "@zulcom/ckeditor5-build-markdown",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A markdown editor build of CKEditor 5 – the best browser-based rich text editor.",
   "keywords": [
     "ckeditor5-build",
@@ -48,6 +48,7 @@
     "@ckeditor/ckeditor5-table": "^19.0.0",
     "@ckeditor/ckeditor5-theme-lark": "^19.0.0",
     "@ckeditor/ckeditor5-typing": "^19.0.0",
+    "@ckeditor/ckeditor5-upload": "19.0.1",
     "@zulcom/ckeditor5-markdown-gfm": "git://github.com/Zulcom/ckeditor5-markdown-gfm.git",
     "eslint": "^5.5.0",
     "eslint-config-ckeditor5": "^2.0.0",

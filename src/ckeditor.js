@@ -27,7 +27,7 @@ import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import CodeBlock from '@ckeditor/ckeditor5-code-block/src/codeblock';
 import GFMDataProcessor from '@zulcom/ckeditor5-markdown-gfm/src/gfmdataprocessor';
-
+import Base64UploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/base64uploadadapter';
 function Markdown( editor ) {
 	editor.data.processor = new GFMDataProcessor( editor.editing.view.document );
 }
@@ -37,6 +37,7 @@ export default class MarkdownEditor extends ClassicEditorBase {
 
 // Plugins to include in the build.
 MarkdownEditor.builtinPlugins = [
+	Base64UploadAdapter,
 	Essentials,
 	Markdown,
 	UploadAdapter,
